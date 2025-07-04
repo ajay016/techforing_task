@@ -50,3 +50,24 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = Project
         fields = ['id', 'name', 'description', 'owner', 'created_at']
         read_only_fields = ['owner', 'created_at']
+        
+
+
+class ProjectMemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectMember
+        fields = ['id', 'project', 'user', 'role']
+        
+        
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ["id", "project", "title", "description", "status", "priority", "assigned_to", "created_at", "due_date"]
+        read_only_fields = ["created_at"]
+        
+        
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['id', 'task', 'user', 'content', 'created_at']
+        read_only_fields = ['task', 'user', 'created_at']

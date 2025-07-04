@@ -27,27 +27,27 @@ class UserAdmin(BaseUserAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("name", "owner", "created_at")
+    list_display = ("name", "id",  "owner", "created_at")
     search_fields = ("name", "owner__username", "owner__email")
     list_filter = ("created_at",)
 
 
 @admin.register(ProjectMember)
 class ProjectMemberAdmin(admin.ModelAdmin):
-    list_display = ("project", "user", "role")
+    list_display = ("project", "id", "user", "role")
     list_filter = ("role",)
     search_fields = ("project__name", "user__username", "user__email")
 
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ("title", "project", "status", "priority", "assigned_to", "due_date")
+    list_display = ("title", "id", "project", "status", "priority", "assigned_to", "due_date")
     list_filter = ("status", "priority", "project")
     search_fields = ("title", "description", "assigned_to__username", "project__name")
 
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ("task", "user", "created_at")
+    list_display = ("task", "id", "user", "created_at")
     search_fields = ("task__title", "user__username", "content")
     list_filter = ("created_at",)
