@@ -1,0 +1,23 @@
+---------------------------------------------------------------
+Registration:
+http://127.0.0.1:8000/api/users/register/
+
+{
+    "username": "test",
+    "email": "test@example.com",
+    "first_name": "Test",
+    "last_name": "Test Last",
+    "password": "12345678"
+}
+-----------------------------------------------------------------
+
+
+Login token
+http://127.0.0.1:8000/api/users/login/
+
+{
+  "email": "test@example.com",
+  "password": "12345678"
+}
+-----------------------------------------------------------------
+
