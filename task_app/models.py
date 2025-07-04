@@ -99,7 +99,7 @@ class Task(models.Model):
     TODO        = "todo"
     IN_PROGRESS = "in_progress"
     DONE        = "done"
-    STATUS_CHOICES = [(TODO, "To Do"), (IN_PROGRESS, "In Progress"), (DONE, "Done")]
+    STATUS_CHOICES = [(TODO, "To Do"), (IN_PROGRESS, "In Progress"), (DONE, "Done")]
 
     LOW    = "low"
     MEDIUM = "medium"

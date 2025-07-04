@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from .serializers import *
+from .models import *
 
 User = get_user_model()
 
@@ -75,3 +76,66 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         return Response({"detail": "Listing users is not allowed."}, status=403)
+    
+    
+# class ProjectViewSet(viewsets.ModelViewSet):
+#     queryset = Project.objects.all()
+#     serializer_class = ProjectSerializer
+#     permission_classes = [permissions.IsAuthenticated]
+
+#     def perform_create(self, serializer):
+#         serializer.save(owner=self.request.user)
+
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        response = super().create(request, *args, **kwargs)
+        return Response({
+            "message": "Project created successfully",
+            "data": response.data
+        }, status=status.HTTP_201_CREATED)
+
+    def update(self, request, *args, **kwargs):
+        project = self.get_object()
+        if project.owner != request.user:
+            return Response({
+                "message": "You do not have permission to update this project."
+            }, status=status.HTTP_403_FORBIDDEN)
+
+        response = super().update(request, *args, **kwargs)
+        return Response({
+            "message": "Project updated successfully",
+            "data": response.data
+        })
+
+    def partial_update(self, request, *args, **kwargs):
+        project = self.get_object()
+        if project.owner != request.user:
+            return Response({
+                "message": "You do not have permission to update this project."
+            }, status=status.HTTP_403_FORBIDDEN)
+
+        response = super().partial_update(request, *args, **kwargs)
+        return Response({
+            "message": "Project updated successfully",
+            "data": response.data
+        })
+
+    def destroy(self, request, *args, **kwargs):
+        project = self.get_object()
+        if project.owner != request.user:
+            return Response({
+                "message": "You do not have permission to delete this project."
+            }, status=status.HTTP_403_FORBIDDEN)
+
+        project.delete()
+        return Response({
+            "message": "Project deleted successfully"
+        }, status=status.HTTP_204_NO_CONTENT)

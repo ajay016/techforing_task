@@ -4,6 +4,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 from django.urls import path, include
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from .models import *
 
 User = get_user_model()
 
@@ -42,3 +43,10 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         }
         data["message"] = "User logged in successfully"
         return data
+    
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = ['id', 'name', 'description', 'owner', 'created_at']
+        read_only_fields = ['owner', 'created_at']
