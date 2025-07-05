@@ -1,0 +1,170 @@
+[
+{
+    "model": "task_app.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$r8aU8k8EmNcOBoqE0bGa28$3Cay8ScesGoonV0XV5A7IjjfCwFaNh/R2if4p6ryu+Y=",
+        "last_login": "2025-07-04T05:19:28.920Z",
+        "is_superuser": true,
+        "username": "ajay",
+        "email": "ajayghosh28@gmail.com",
+        "first_name": "Ajay",
+        "last_name": "Ghosh",
+        "date_joined": "2025-07-04T05:14:52.508Z",
+        "is_active": true,
+        "is_staff": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "task_app.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$quQfyP2UQhmjzbU1bkfd3i$8c/ssu+2OYfhE4u6O2iuLtJN57P1KOaDvXlEV9RjRL0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "test",
+        "email": "test@example.com",
+        "first_name": "Test",
+        "last_name": "Test Last",
+        "date_joined": "2025-07-04T10:20:29.338Z",
+        "is_active": true,
+        "is_staff": false,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "task_app.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$y0xMcemTXN5qZv4fLQhEBU$cs55+MgTMSrjwEalvUB847lhZB72bWbTTZpYwIbw6Is=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "test2",
+        "email": "test2@gmail.com",
+        "first_name": "Test2",
+        "last_name": "Test2 Last",
+        "date_joined": "2025-07-04T15:19:48.025Z",
+        "is_active": true,
+        "is_staff": false,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "task_app.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ggYSfBDHt7Ns38higatJDY$RCQmSmYMWYbBsZ8ACc9XRR+lMAqYiGK7BdlIur6Gioo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Tom Cruise",
+        "email": "tomcruise@gmail.com",
+        "first_name": "Tom",
+        "last_name": "Cruise",
+        "date_joined": "2025-07-04T16:40:45.175Z",
+        "is_active": true,
+        "is_staff": false,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "task_app.project",
+    "pk": 1,
+    "fields": {
+        "name": "Test Project 1",
+        "description": "Here is a detailed description of Test Project 1.",
+        "owner": 1,
+        "created_at": "2025-07-04T09:40:25.694Z"
+    }
+},
+{
+    "model": "task_app.project",
+    "pk": 6,
+    "fields": {
+        "name": "Ecommerce Project",
+        "description": "This is medium scale ecommerce project.",
+        "owner": 1,
+        "created_at": "2025-07-04T17:16:41.931Z"
+    }
+},
+{
+    "model": "task_app.project",
+    "pk": 7,
+    "fields": {
+        "name": "Corporate Project",
+        "description": "This is small scale corporate project.",
+        "owner": 1,
+        "created_at": "2025-07-04T17:17:19.703Z"
+    }
+},
+{
+    "model": "task_app.project",
+    "pk": 8,
+    "fields": {
+        "name": "Ecommerce Python Project",
+        "description": "This is large scale ecommerce project that will be done in Python and Django.",
+        "owner": 1,
+        "created_at": "2025-07-04T17:18:45.996Z"
+    }
+},
+{
+    "model": "task_app.projectmember",
+    "pk": 1,
+    "fields": {
+        "project": 1,
+        "user": 3,
+        "role": "member"
+    }
+},
+{
+    "model": "task_app.projectmember",
+    "pk": 3,
+    "fields": {
+        "project": 7,
+        "user": 6,
+        "role": "admin"
+    }
+},
+{
+    "model": "task_app.task",
+    "pk": 3,
+    "fields": {
+        "project": 8,
+        "title": "Login System",
+        "description": "Built a Login System with RestAPI",
+        "status": "todo",
+        "priority": "high",
+        "assigned_to": 4,
+        "created_at": "2025-07-04T17:45:53.617Z",
+        "due_date": "2025-07-20T00:00:00Z"
+    }
+},
+{
+    "model": "task_app.task",
+    "pk": 4,
+    "fields": {
+        "project": 8,
+        "title": "Login System",
+        "description": "Built a Login System with RestAPI",
+        "status": "todo",
+        "priority": "high",
+        "assigned_to": null,
+        "created_at": "2025-07-04T18:06:47.900Z",
+        "due_date": "2025-07-20T00:00:00Z"
+    }
+},
+{
+    "model": "task_app.comment",
+    "pk": 3,
+    "fields": {
+        "task": 3,
+        "user": 1,
+        "content": "I need it to be done by today",
+        "created_at": "2025-07-04T17:53:03.926Z"
+    }
+}
+]
