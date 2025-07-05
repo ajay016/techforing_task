@@ -28,4 +28,10 @@
 
 ### 5. Load Sample Data (if required)
     Load this sample data into the database if required
-    `python manage.py loaddata sample_data.json` 
+    `python manage.py loaddata sample_data.json`
+
+### 6. API Documentation
+API documentation is available via Postman.
+You can view and test all endpoints using the link below:
+
+🔗 Postman Collection: [(https://documenter.getpostman.com/view/16305063/2sB34cnhEE)]
