@@ -27,7 +27,7 @@ open git bash make a new directory and navigate to it. Then, clone the repositor
     `python manage.py migrate`
 
 ### 5. Load Sample Data (if required)
-Load this sample data into the database if required
+# Load this sample data into the database if required
     python manage.py loaddata sample_data.json
 
 ### 6. Create Superuser
