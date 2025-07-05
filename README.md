@@ -35,7 +35,10 @@
 ### To access the Django admin panel or use authenticated endpoints, create a superuser:
     python manage.py createsuperuser
 
-# 7. API Documentation
+# 7. Run the Server
+    python manage.py runserver
+
+# 8. API Documentation
 API documentation is available via Postman.
 You can view and test all endpoints using the link below:
 
